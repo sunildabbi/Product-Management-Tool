@@ -82,3 +82,6 @@ curl -X POST http://localhost:8080/api/products -H "Content-Type: application/js
 ## Notes
 - SQLite file path is configurable via `DATABASE_FILE`.
 - To reset locally, delete the `data/` folder and restart.
+## Notes
+- Class Diagrams are given in file ClassDiagram.png
+- ER Diagram is given in file ErDiagram.png
