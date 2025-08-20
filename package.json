@@ -1,0 +1,23 @@
+{
+  "name": "catalog-backend",
+  "version": "1.0.0",
+  "description": "Internal Product Management Tool backend (Node.js + SQLite)",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node scripts/seed.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^3.23.8",
+    "compression": "^1.7.4",
+    "helmet": "^7.1.0"
+  }
+}

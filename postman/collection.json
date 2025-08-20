@@ -1,0 +1,156 @@
+{
+  "info": {
+    "name": "Catalog Backend API",
+    "_postman_id": "e4b1b08f-1234-4567-89ab-abcdef123456",
+    "description": "Endpoints for Categories, Attributes, Products",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Categories",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/categories?includeAttributes=true",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "categories"
+          ],
+          "query": [
+            {
+              "key": "includeAttributes",
+              "value": "true"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Category",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Watches\", \"description\": \"Watches cat.\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/categories",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "categories"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Attribute",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Dial Color\", \"data_type\": \"TEXT\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/attributes",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "attributes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Map Attribute to Category",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"attribute_id\": 1, \"is_required\": true, \"is_unique\": false, \"position\": 1}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/categories/1/attributes",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "categories",
+            "1",
+            "attributes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"category_id\": 1, \"sku\": \"WAT-001\", \"name\": \"Classic Watch\", \"price\": 1999, \"currency\": \"INR\", \"attributes\": {\"Dial Color\": \"Black\"}}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/products",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      }
+    }
+  ]
+}
